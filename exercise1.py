@@ -1,4 +1,4 @@
-# this program was written by James Laidlaw, lab H21
+# this program was written by James Laidlaw, lab H21.
 # this is a simple program that performs a number of processes on a provided list of integers, and informs the user of each process and the changes
 # caused by it
 
