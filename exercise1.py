@@ -1,3 +1,4 @@
+# this program was written by James Laidlaw, lab H21
 # this is a simple program that performs a number of processes on a provided list of integers, and informs the user of each process and the changes
 # caused by it
 
@@ -26,12 +27,20 @@ def main():
     print("After removing the smallest odd number, there are {0} numbers in the list: \n{1}".format(len(numbers), numbers))
 
 
+# list_to_check is a tuple or list containing integers to be searched through for odd numbers
+# list_to_fill is a list that will have the found odd numbers added to it, takes advantage of mutability
+
+# finds odd numbers in list_to_check and adds them to list_to_fill, will add duplicates to list_to_fill if found
 def find_odd(list_to_check, list_to_fill):
     for number in list_to_check:
         if (number % 2) != 0:
             list_to_fill.append(number)
 
 
+# list_to_check is a list containing items to be searched through for the item to be removed
+# item is the object that will be searched for and removed from list_to_check
+
+# removes all occurrences of item from list_to_check
 def full_remove(list_to_check, item):
     while item in list_to_check:
         list_to_check.remove(item)
