@@ -2,12 +2,18 @@
 # this program tracks precipitation by month and allows the user to lookup said information by inserting the abbreviated name of the month
 
 def main():
+
+    # establish all 12 months in tuple and inform user of contents
     months = ('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT')
     print("The contents of object {0} are {1}".format(id(months), months))
     months = add_to_tuple(months,  ('NOV', 'DEC'))
     print("The contents of object {0} are {1}".format(id(months), months))
+
+    # establish precipitation records for all 12 months
     precipitation2020 = [15.5, 12.1, 18.5, 15.6, 10.7, 62.2, 41.4, 58.3, 15.7, 15.3, 24.8]
     precipitation2020.insert(6, 67.8)
+
+    # inform user of precipitation in may, then let them check the precipitation for any month
     check_month("MAY", months, precipitation2020)
     month_to_check = input("Please enter a month: ").upper()
     check_month(month_to_check, months, precipitation2020)
