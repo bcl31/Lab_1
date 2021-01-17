@@ -56,7 +56,7 @@ def print_order(order, inventory):
 
 # generates a formatted invoice for one provided item, then appends it to the receipt
 def generate_invoice(bulb_code, order_amount, order_cost, receipt):
-    bulb_code = str(bulb_code) + "  "
+    bulb_code = str(bulb_code).ljust(5)
     order_amount = str(order_amount).rjust(4)
     order_cost = str(order_cost).rjust(6)
     item_invoice = "{0} *{1} = ${2}".format(bulb_code, order_amount, order_cost)
