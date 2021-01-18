@@ -39,7 +39,8 @@ def print_order(order, inventory):
         cost_total += order_cost
 
         # generate the invoice line string and add it to the receipt
-        generate_invoice(bulb_code, order_amount, order_cost, receipt)
+        item_invoice = "%-5s *%4d = $%6.2f" % (bulb_code, order_amount, order_cost)
+        receipt.append(item_invoice)
 
     # sort the invoice lines alphabetically, then print them all
     receipt.sort()
@@ -48,19 +49,6 @@ def print_order(order, inventory):
 
     # inform the user of their total cost and amount of bulbs ordered
     print("Thank you for purchasing {0} bulbs from Bluebell Greenhouses. Your total comes to $ {1}.".format(bulb_total, cost_total))
-
-
-# bulb_code is a 3 letter string indicating the type of bulb ordered
-# order_amount is an int indicating the amount of bulbs ordered
-# order cost is a float rounded to two decimal places indicating the total cost of the type of bulb ordered
-
-# generates a formatted invoice for one provided item, then appends it to the receipt
-def generate_invoice(bulb_code, order_amount, order_cost, receipt):
-    bulb_code = str(bulb_code).ljust(5)
-    order_amount = str(order_amount).rjust(4)
-    order_cost = str(order_cost).rjust(6)
-    item_invoice = "{0} *{1} = ${2}".format(bulb_code, order_amount, order_cost)
-    receipt.append(item_invoice)
 
 
 # inventory is a dict containing the carried items and their price in item:price format
